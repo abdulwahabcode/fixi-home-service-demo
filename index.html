@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixi Home Service — Gartenpflege &amp; Hausbetreuung in Sankt Valentin</title>
+<meta name="description" content="Fixi Home Service — Stefan Emsenhuber. Gartenpflege, Rasenpflege, Heckenschnitt, Hausbetreuung und Winterdienst in Sankt Valentin und Umgebung. Persönlich, zuverlässig, aus einer Hand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest-deep:#12271C;
+    --forest:#1B3A2A;
+    --forest-mid:#2E5741;
+    --forest-soft:#47755C;
+    --cream:#F5F0E4;
+    --cream-deep:#EFE7D2;
+    --card:#FBF8F0;
+    --brass:#B08B57;
+    --brass-soft:#C2A46D;
+    --ink:#26332A;
+    --ink-soft:#5A6A5E;
+    --offwhite:#EFE9DA;
+    --radius:20px;
+    --shadow:0 18px 40px rgba(18,39,28,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito Sans',system-ui,-apple-system,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;color:var(--forest-deep)}
+  .wrap{width:min(1140px,100% - 2.5rem);margin-inline:auto}
+  section{padding:4.5rem 0}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brass);
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--brass);border-radius:2px}
+  .section-head{max-width:640px;margin-bottom:2.6rem}
+  .section-head h2{font-size:clamp(1.7rem,4.5vw,2.4rem);margin:.6rem 0 .7rem}
+  .section-head p{color:var(--ink-soft);font-size:1.02rem}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,240,228,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(27,58,42,.08);
+    transition:box-shadow .3s ease;
+  }
+  header.scrolled{box-shadow:0 8px 30px rgba(18,39,28,.12)}
+  .header-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+  .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .logo-mark{
+    width:42px;height:42px;border-radius:13px;flex:none;
+    background:var(--forest);display:grid;place-items:center;
+  }
+  .logo-text{line-height:1.1}
+  .logo-text strong{font-family:'Fraunces',serif;font-size:1.12rem;color:var(--forest-deep);display:block}
+  .logo-text span{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+  nav.main{display:none;gap:1.6rem}
+  nav.main a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.92rem}
+  nav.main a:hover{color:var(--forest-mid)}
+  .header-cta{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:var(--forest);color:var(--offwhite);text-decoration:none;
+    font-weight:800;font-size:.88rem;padding:.6rem 1.05rem;border-radius:999px;
+    transition:background .25s ease,transform .25s ease;white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--forest-mid);transform:translateY(-1px)}
+  @media(min-width:860px){nav.main{display:flex}}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    padding:.95rem 1.6rem;border-radius:999px;text-decoration:none;
+    font-weight:800;font-size:.98rem;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn-wa{background:#3E7C4F;color:#F2EFE3;box-shadow:0 12px 26px rgba(46,87,65,.35)}
+  .btn-wa:hover{background:#356B43;transform:translateY(-2px)}
+  .btn-call{background:var(--brass);color:#FFF9EC;box-shadow:0 12px 26px rgba(176,139,87,.35)}
+  .btn-call:hover{background:#9E7C4C;transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--offwhite);border:1.5px solid rgba(239,233,218,.45)}
+  .btn-ghost:hover{border-color:var(--brass-soft);color:var(--brass-soft)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--forest-deep);color:var(--offwhite);padding:0;position:relative;overflow:hidden}
+  .hero-grid{display:grid;gap:0}
+  .hero-copy{padding:3.4rem 0 3rem;position:relative;z-index:2}
+  .hero-copy .eyebrow{color:var(--brass-soft)}
+  .hero h1{color:var(--offwhite);font-size:clamp(2.1rem,6.5vw,3.4rem);margin:1rem 0 1.1rem}
+  .hero h1 em{font-style:italic;color:var(--brass-soft)}
+  .hero p.lead{font-size:1.08rem;color:#D9D2BE;max-width:34rem;margin-bottom:2rem}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2.2rem}
+  .hero-points{display:flex;flex-wrap:wrap;gap:.55rem}
+  .hero-points li{
+    list-style:none;display:inline-flex;align-items:center;gap:.45rem;
+    background:rgba(239,233,218,.08);border:1px solid rgba(239,233,218,.16);
+    padding:.42rem .85rem;border-radius:999px;font-size:.83rem;font-weight:700;color:#E4DCC8;
+  }
+  .hero-points svg{flex:none}
+  .hero-photo{position:relative;min-height:300px}
+  .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-photo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(18,39,28,.35),rgba(18,39,28,0) 40%);
+  }
+  @media(min-width:900px){
+    .hero-grid{grid-template-columns:1.05fr .95fr;align-items:stretch}
+    .hero-copy{padding:5.2rem 2.5rem 5.2rem 0}
+    .hero-photo{min-height:100%}
+    .hero-photo::after{background:linear-gradient(90deg,rgba(18,39,28,.45),rgba(18,39,28,0) 45%)}
+  }
+
+  /* ---------- Leistungen ---------- */
+  .cards{display:grid;gap:1.2rem;grid-template-columns:1fr}
+  @media(min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:980px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{
+    background:var(--card);border:1px solid rgba(27,58,42,.07);border-radius:var(--radius);
+    overflow:hidden;box-shadow:0 6px 20px rgba(18,39,28,.05);
+    transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .card-photo{height:180px;overflow:hidden}
+  .card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .card:hover .card-photo img{transform:scale(1.05)}
+  .card-body{padding:1.4rem 1.5rem 1.6rem}
+  .card-icon{
+    width:46px;height:46px;border-radius:14px;background:var(--cream-deep);
+    display:grid;place-items:center;margin-bottom:.9rem;
+  }
+  .card h3{font-size:1.22rem;margin-bottom:.45rem}
+  .card p{color:var(--ink-soft);font-size:.94rem}
+  .card ul{margin-top:.7rem;list-style:none}
+  .card ul li{font-size:.9rem;color:var(--ink-soft);padding-left:1.15rem;position:relative;margin-top:.3rem}
+  .card ul li::before{content:"";position:absolute;left:0;top:.52em;width:7px;height:7px;border-radius:50%;background:var(--brass)}
+
+  /* ---------- Jahresbetreuung band ---------- */
+  .band{background:var(--forest);color:var(--offwhite);border-radius:calc(var(--radius) + 8px);overflow:hidden}
+  .band-grid{display:grid}
+  .band-photo{min-height:260px;position:relative}
+  .band-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .band-copy{padding:2.6rem 1.6rem}
+  .band-copy .eyebrow{color:var(--brass-soft)}
+  .band-copy h2{color:var(--offwhite);font-size:clamp(1.6rem,4.5vw,2.2rem);margin:.6rem 0 .8rem}
+  .band-copy>p{color:#D9D2BE;font-size:.98rem;margin-bottom:1.6rem}
+  .seasons{display:grid;gap:.9rem}
+  .season{
+    display:flex;gap:.9rem;align-items:flex-start;
+    background:rgba(239,233,218,.06);border:1px solid rgba(239,233,218,.12);
+    border-radius:16px;padding:.95rem 1.1rem;
+  }
+  .season-badge{
+    flex:none;font-family:'Fraunces',serif;font-weight:700;font-size:.85rem;
+    background:var(--brass);color:#FFF9EC;border-radius:10px;padding:.3rem .6rem;margin-top:.1rem;
+  }
+  .season strong{display:block;color:var(--offwhite);font-size:.97rem}
+  .season span{font-size:.88rem;color:#CFC7AE}
+  @media(min-width:900px){
+    .band-grid{grid-template-columns:.9fr 1.1fr}
+    .band-copy{padding:3.2rem 3rem}
+    .band-photo{min-height:100%}
+  }
+
+  /* ---------- Warum Fixi ---------- */
+  .warum-grid{display:grid;gap:1.2rem;grid-template-columns:1fr}
+  @media(min-width:700px){.warum-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1020px){.warum-grid{grid-template-columns:repeat(4,1fr)}}
+  .warum{
+    background:var(--card);border:1px solid rgba(27,58,42,.07);border-radius:var(--radius);
+    padding:1.7rem 1.5rem;box-shadow:0 6px 20px rgba(18,39,28,.05);
+  }
+  .warum .num{
+    font-family:'Fraunces',serif;font-size:1.9rem;font-weight:700;color:var(--brass-soft);
+    display:block;margin-bottom:.5rem;line-height:1;
+  }
+  .warum h3{font-size:1.13rem;margin-bottom:.4rem}
+  .warum p{color:var(--ink-soft);font-size:.92rem}
+  .owner-strip{
+    margin-top:1.6rem;background:var(--cream-deep);border-radius:var(--radius);
+    padding:1.4rem 1.6rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;
+  }
+  .owner-strip p{font-size:.98rem;max-width:38rem}
+  .owner-strip strong{color:var(--forest-deep)}
+
+  /* ---------- Ablauf ---------- */
+  .steps{display:grid;gap:1.2rem;grid-template-columns:1fr}
+  @media(min-width:820px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{
+    position:relative;background:var(--forest);color:var(--offwhite);
+    border-radius:var(--radius);padding:2rem 1.6rem 1.8rem;overflow:hidden;
+  }
+  .step::before{
+    content:attr(data-step);position:absolute;top:.4rem;right:1.1rem;
+    font-family:'Fraunces',serif;font-size:4.6rem;font-weight:700;
+    color:rgba(239,233,218,.1);line-height:1;
+  }
+  .step h3{color:var(--offwhite);font-size:1.25rem;margin-bottom:.5rem;position:relative}
+  .step p{color:#D9D2BE;font-size:.94rem;position:relative}
+
+  /* ---------- Kundenstimmen ---------- */
+  .quotes{display:grid;gap:1.2rem;grid-template-columns:1fr}
+  @media(min-width:820px){.quotes{grid-template-columns:repeat(3,1fr)}}
+  .quote{
+    background:var(--card);border:1px solid rgba(27,58,42,.07);border-radius:var(--radius);
+    padding:1.8rem 1.6rem;box-shadow:0 6px 20px rgba(18,39,28,.05);display:flex;flex-direction:column;gap:1rem;
+  }
+  .quote .stars{color:var(--brass);letter-spacing:.25em;font-size:.9rem}
+  .quote p{font-family:'Fraunces',serif;font-size:1.05rem;font-style:italic;color:var(--forest-deep);line-height:1.5}
+  .quote footer{margin-top:auto;font-size:.86rem;font-weight:800;color:var(--ink-soft);letter-spacing:.02em}
+
+  /* ---------- Kontakt ---------- */
+  .contact-card{
+    background:var(--forest-deep);color:var(--offwhite);border-radius:calc(var(--radius) + 8px);
+    padding:3rem 1.6rem;text-align:center;position:relative;overflow:hidden;
+  }
+  .contact-card::before,.contact-card::after{
+    content:"";position:absolute;border-radius:50%;border:1.5px solid rgba(194,164,109,.22);
+  }
+  .contact-card::before{width:340px;height:340px;top:-170px;left:-120px}
+  .contact-card::after{width:420px;height:420px;bottom:-260px;right:-150px}
+  .contact-card h2{color:var(--offwhite);font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:.8rem;position:relative;z-index:1}
+  .contact-card p{color:#D9D2BE;max-width:32rem;margin:0 auto 2rem;position:relative;z-index:1}
+  .contact-ctas{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;position:relative;z-index:1}
+  .contact-meta{margin-top:1.8rem;font-size:.9rem;color:#BDB49A;position:relative;z-index:1}
+  .contact-meta strong{color:var(--brass-soft)}
+
+  /* ---------- Footer ---------- */
+  footer.site{background:var(--forest-deep);color:#BDB49A;padding:2.2rem 0 2.6rem;border-top:1px solid rgba(239,233,218,.08)}
+  .footer-in{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:space-between;align-items:center}
+  footer.site .logo-text strong{color:var(--offwhite)}
+  footer.site p{font-size:.87rem}
+  footer.site a{color:var(--brass-soft);text-decoration:none;font-weight:700}
+
+  /* ---------- Floating WhatsApp ---------- */
+  .wa-float{
+    position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;
+    width:58px;height:58px;border-radius:50%;background:#3E7C4F;
+    display:grid;place-items:center;box-shadow:0 14px 30px rgba(18,39,28,.35);
+    transition:transform .25s ease;
+  }
+  .wa-float:hover{transform:scale(1.07)}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <div class="wrap header-in">
+    <a class="logo" href="#start" aria-label="Fixi Home Service">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c0-5 0-8 0-11M12 10C12 6 9 3.5 5 3.5c0 4.5 2.5 6.5 7 6.5zm0 3c0-4 2.5-6 6.5-6 0 4-2 6.5-6.5 6.5z" stroke="#C2A46D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="logo-text">
+        <strong>Fixi Home Service</strong>
+        <span>Garten · Haus · Betreuung</span>
+      </span>
+    </a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#jahresbetreuung">Jahresbetreuung</a>
+      <a href="#warum">Warum Fixi</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="header-cta" href="tel:+4368120538107">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      +43 681 205 38 107
+    </a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="start">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Gartenpflege &amp; Hausbetreuung · Sankt Valentin</span>
+      <h1>Ihr Garten in besten Händen — <em>das ganze Jahr.</em></h1>
+      <p class="lead">Fixi Home Service pflegt Ihren Garten und betreut Ihr Zuhause in Sankt Valentin und Umgebung — persönlich, zuverlässig und alles aus einer Hand.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-wa" href="https://wa.me/4368120538107" target="_blank" rel="noopener">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.6-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+          Per WhatsApp anfragen
+        </a>
+        <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
+      </div>
+      <ul class="hero-points">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke="#C2A46D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ein fixer Ansprechpartner
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke="#C2A46D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Antwort innerhalb von 2 Werktagen garantiert
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5" stroke="#C2A46D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Aus der Region, für die Region
+        </li>
+      </ul>
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.pexels.com/photos/24595772/pexels-photo-24595772/free-photo-of-a-man-working-in-a-garden.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gärtner bei der Gartenpflege in einem grünen, gepflegten Garten" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEISTUNGEN ================= -->
+<section id="leistungen">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Leistungen</span>
+      <h2>Alles rund um Haus &amp; Garten</h2>
+      <p>Vom regelmäßigen Rasenschnitt bis zur Betreuung Ihres Zuhauses im Urlaub — Sie haben einen Ansprechpartner für alles.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-photo">
+          <img src="https://images.stockcake.com/public/9/1/8/9187722e-56ed-4c2d-984a-285f74cb357e/elegant-estate-gardens-stockcake.jpg" alt="Gepflegter Garten mit Beeten und Grünflächen" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Gartenpflege</h3>
+          <p>Die laufende Pflege Ihres Gartens, damit er zu jeder Jahreszeit ordentlich und gesund aussieht.</p>
+          <ul>
+            <li>Beete pflegen &amp; Unkraut entfernen</li>
+            <li>Pflanzen schneiden &amp; versorgen</li>
+            <li>Laub- &amp; Grünschnittarbeiten</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-photo">
+          <img src="https://www.mklibrary.com/wp-content/uploads/2024/05/7-Lawn-Mowing-Tips-for-a-Perfectly-Manicured-Front-Yard-unsplash-scaled.jpg" alt="Frisch gemähter, sattgrüner Rasen vor einem Haus" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Rasenpflege</h3>
+          <p>Ein sattgrüner, gleichmäßiger Rasen — gemäht und gepflegt im vereinbarten Rhythmus.</p>
+          <ul>
+            <li>Regelmäßiges Rasenmähen</li>
+            <li>Kanten schneiden &amp; Wege freihalten</li>
+            <li>Schnittgut wird mitgenommen</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-photo">
+          <img src="https://images.pexels.com/photos/24595768/pexels-photo-24595768.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Heckenschnitt mit der Heckenschere" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Heckenschnitt</h3>
+          <p>Hecken und Sträucher in Form gebracht — sauber geschnitten und fachgerecht entsorgt.</p>
+          <ul>
+            <li>Form- &amp; Pflegeschnitt</li>
+            <li>Strauch- &amp; Baumschnitt (klein)</li>
+            <li>Grünschnitt-Entsorgung inklusive</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 11.5L12 4l9 7.5" stroke="#2E5741" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10v9.5h13V10" stroke="#2E5741" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 19.5v-5h5v5" stroke="#B08B57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Hausbetreuung</h3>
+          <p>Ihr Zuhause ist auch dann in guten Händen, wenn Sie nicht da sind — im Urlaub oder über längere Zeit.</p>
+          <ul>
+            <li>Post entleeren &amp; Pflanzen gießen</li>
+            <li>Regelmäßige Kontrollgänge</li>
+            <li>Lüften &amp; Rollläden bedienen</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 6.5c2 2 4.5 3 7 3s5-1 7-3M5 17.5c2-2 4.5-3 7-3s5 1 7 3" stroke="#2E5741" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 9.5l-2-2m2 2l2-2m-2 7l-2 2m2-2l2 2" stroke="#B08B57" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Winterdienst</h3>
+          <p>Wenn es schneit, sind Gehweg und Einfahrt früh geräumt — sicher für Sie, Ihre Familie und Besucher.</p>
+          <ul>
+            <li>Schneeräumung von Wegen &amp; Einfahrten</li>
+            <li>Streuen bei Glatteis</li>
+            <li>Zuverlässig bei jedem Wetter</li>
+          </ul>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c0-5 0-8 0-11M12 10C12 6 9 3.5 5 3.5c0 4.5 2.5 6.5 7 6.5zm0 3c0-4 2.5-6 6.5-6 0 4-2 6.5-6.5 6.5z" stroke="#2E5741" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Saisonale Arbeiten</h3>
+          <p>Frühjahrsputz im Garten, Herbstschnitt oder die Vorbereitung auf den Winter — wir planen mit Ihnen voraus.</p>
+          <ul>
+            <li>Frühjahrs- &amp; Herbstservice</li>
+            <li>Beete neu bepflanzen</li>
+            <li>Garten winterfest machen</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JAHRESBETREUUNG ================= -->
+<section id="jahresbetreuung" style="padding-top:0">
+  <div class="wrap">
+    <div class="band reveal">
+      <div class="band-grid">
+        <div class="band-photo">
+          <img src="https://images.pexels.com/photos/35685564/pexels-photo-35685564/free-photo-of-charming-snow-covered-cabin-in-austrian-alps.jpeg?auto=compress&w=600" alt="Verschneites Haus in den österreichischen Alpen im Winter" loading="lazy">
+        </div>
+        <div class="band-copy">
+          <span class="eyebrow">Jahresbetreuung</span>
+          <h2>Einmal vereinbart — rund ums Jahr betreut</h2>
+          <p>Mit der Jahresbetreuung müssen Sie an nichts mehr denken: Wir kommen zu den richtigen Zeitpunkten und halten Garten und Grundstück in jeder Saison in Schuss.</p>
+          <div class="seasons">
+            <div class="season">
+              <span class="season-badge">Frühjahr</span>
+              <div><strong>Start in die Saison</strong><span>Garten aus dem Winterschlaf holen, Beete vorbereiten, erster Schnitt.</span></div>
+            </div>
+            <div class="season">
+              <span class="season-badge">Sommer</span>
+              <div><strong>Wachstum im Griff</strong><span>Regelmäßiges Mähen, Hecken in Form halten, Pflanzen versorgen.</span></div>
+            </div>
+            <div class="season">
+              <span class="season-badge">Herbst</span>
+              <div><strong>Ordentlich in den Winter</strong><span>Laub entfernen, Rückschnitt und Garten winterfest machen.</span></div>
+            </div>
+            <div class="season">
+              <span class="season-badge">Winter</span>
+              <div><strong>Sicher durch die kalte Zeit</strong><span>Schneeräumung, Streudienst und Kontrollgänge bei Abwesenheit.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WARUM FIXI ================= -->
+<section id="warum" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Warum Fixi</span>
+      <h2>Persönlich. Verlässlich. Aus der Region.</h2>
+      <p>Bei Fixi Home Service sprechen Sie nicht mit einer Zentrale, sondern direkt mit der Person, die auch bei Ihnen arbeitet.</p>
+    </div>
+    <div class="warum-grid">
+      <div class="warum reveal">
+        <span class="num">01</span>
+        <h3>Ein Ansprechpartner</h3>
+        <p>Stefan Emsenhuber persönlich — vom ersten Anruf bis zur fertigen Arbeit. Keine wechselnden Teams, keine Überraschungen.</p>
+      </div>
+      <div class="warum reveal">
+        <span class="num">02</span>
+        <h3>Antwort garantiert</h3>
+        <p>Jede Anfrage wird innerhalb von 2 Werktagen beantwortet — versprochen. Sie warten nicht, Sie wissen Bescheid.</p>
+      </div>
+      <div class="warum reveal">
+        <span class="num">03</span>
+        <h3>Zuverlässig &amp; pünktlich</h3>
+        <p>Vereinbarte Termine werden eingehalten. Und wenn sich etwas ändert, erfahren Sie es rechtzeitig von uns.</p>
+      </div>
+      <div class="warum reveal">
+        <span class="num">04</span>
+        <h3>Alles aus einer Hand</h3>
+        <p>Garten, Rasen, Hecke, Haus und Winterdienst — ein Partner für Ihr gesamtes Grundstück, das ganze Jahr.</p>
+      </div>
+    </div>
+    <div class="owner-strip reveal">
+      <p><strong>Stefan Emsenhuber</strong> — Ihr persönlicher Ansprechpartner für Gartenpflege und Hausbetreuung in Sankt Valentin und Umgebung.</p>
+      <a class="btn btn-call" href="tel:+4368120538107">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Direkt anrufen
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABLAUF ================= -->
+<section id="ablauf" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ablauf</span>
+      <h2>In drei Schritten zu Ihrem gepflegten Garten</h2>
+      <p>Unkompliziert und ohne Verpflichtung — so einfach geht es los.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" data-step="1">
+        <h3>Anfrage senden</h3>
+        <p>Schreiben Sie uns per WhatsApp oder rufen Sie einfach an. Beschreiben Sie kurz, was Sie brauchen — ein Foto genügt oft schon.</p>
+      </div>
+      <div class="step reveal" data-step="2">
+        <h3>Besichtigung &amp; Angebot</h3>
+        <p>Wir schauen uns alles vor Ort an und Sie erhalten ein klares, unverbindliches Angebot — Antwort innerhalb von 2 Werktagen garantiert.</p>
+      </div>
+      <div class="step reveal" data-step="3">
+        <h3>Zurücklehnen</h3>
+        <p>Wir übernehmen Pflege und Betreuung nach Plan. Sie genießen Ihren Garten — wir kümmern uns um den Rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KUNDENSTIMMEN ================= -->
+<section id="stimmen" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kundenstimmen</span>
+      <h2>Das sagen unsere Kunden</h2>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote reveal">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Seit Herr Emsenhuber unseren Garten betreut, sieht er das ganze Jahr gepflegt aus — wir müssen an nichts mehr denken."</p>
+        <footer>Familie H. — Sankt Valentin</footer>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Verlässlich, pünktlich und immer erreichbar. Auch im Urlaub war unser Haus in besten Händen."</p>
+        <footer>Markus R. — Enns</footer>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <p>„Hecke, Rasen, Winterdienst — alles aus einer Hand und zu einem fairen Preis. Absolute Empfehlung."</p>
+        <footer>Sabine K. — Haag</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section id="kontakt" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <h2>Bereit für einen Garten ohne Sorgen?</h2>
+      <p>Schreiben Sie uns auf WhatsApp oder rufen Sie an — wir antworten garantiert innerhalb von 2 Werktagen und besprechen alles in Ruhe.</p>
+      <div class="contact-ctas">
+        <a class="btn btn-wa" href="https://wa.me/4368120538107" target="_blank" rel="noopener">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.6-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+          WhatsApp schreiben
+        </a>
+        <a class="btn btn-call" href="tel:+4368120538107">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          +43 681 205 38 107
+        </a>
+      </div>
+      <p class="contact-meta">Einsatzgebiet: <strong>Sankt Valentin &amp; Umgebung</strong> · Niederösterreich<br>Antwort innerhalb von <strong>2 Werktagen</strong> garantiert</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap footer-in">
+    <a class="logo" href="#start" aria-label="Fixi Home Service">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21c0-5 0-8 0-11M12 10C12 6 9 3.5 5 3.5c0 4.5 2.5 6.5 7 6.5zm0 3c0-4 2.5-6 6.5-6 0 4-2 6.5-6.5 6.5z" stroke="#C2A46D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="logo-text">
+        <strong>Fixi Home Service</strong>
+        <span>Garten · Haus · Betreuung</span>
+      </span>
+    </a>
+    <p>Stefan Emsenhuber · Sankt Valentin, Niederösterreich<br>Telefon &amp; WhatsApp: <a href="tel:+4368120538107">+43 681 205 38 107</a></p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/4368120538107" target="_blank" rel="noopener" aria-label="Per WhatsApp kontaktieren">
+  <svg width="29" height="29" viewBox="0 0 24 24" fill="#F2EFE3" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.1.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.6-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+</a>
+
+<script>
+  // Sticky header shadow
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  // Scroll-reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+</script>
+</body>
+</html>
