@@ -275,6 +275,16 @@
 }
 .wa-float svg, .float-wa svg{width:29px !important; height:29px !important; fill:#fff}
 </style>
+
+<style>
+/* Root-cause fix 2026-10-21: header padding + CTA fit (number button screen se bahar ja raha tha) */
+header .wrap{padding-left:20px;padding-right:20px}
+@media (max-width:680px){
+  header .header-in{flex-wrap:nowrap}
+  header .logo{min-width:0}
+  header .header-cta{flex:none;font-size:.78rem !important;padding:9px 11px !important;white-space:nowrap}
+}
+</style>
 </head>
 <body>
 
